@@ -28,4 +28,4 @@ Runs the project.
 ### Testing: `npm test`
 Run "npm test" command if you want to run tests.
 
-**Note 2: You’ll need to have NPM and Node on your local machine. This project was developed and testes using NPM v6.14.15 and Node v14.18.1.**
+**Note 2: You’ll need to have NPM and Node on your local machine. This project was developed and tested using NPM v6.14.15 and Node v14.18.1.**
