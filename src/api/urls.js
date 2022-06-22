@@ -1,4 +1,5 @@
-const EMAIL = "jmiban@gmail.com";
+const EMAIL = process.env.EMAIL;
+
 const TOKEN_URL = `https://rooftop-career-switch.herokuapp.com/token?email=${EMAIL}`;
 const BLOCK_URL = "https://rooftop-career-switch.herokuapp.com/blocks"
 const ORDER_CHECK_URL = "https://rooftop-career-switch.herokuapp.com/check"

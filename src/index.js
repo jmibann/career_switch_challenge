@@ -1,6 +1,8 @@
+require('dotenv').config();
+
 const api = require('./api/index.js');
 const check = require('./check.js');
-const TOKEN = require('./api/token.js');
+const TOKEN = process.env.TOKEN;
 
 const formatRiddleToVerify = (array) => array.join('');
 
