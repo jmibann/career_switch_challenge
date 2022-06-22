@@ -1,4 +1,4 @@
-# Career Swwitch Challenge
+# Career Switch Challenge
 
 This challenge belongs to Career Switch.
 
