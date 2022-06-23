@@ -19,11 +19,13 @@ const check = async (blocks, token) => {
     return promise.then(({message}) => {
       if(message){
         resolvedRiddle = [...resolvedRiddle, lastRiddleBlock, disorderedBlocks[index]];
+        console.log('>>>> Solving riddle... ', resolvedRiddle);
         disorderedBlocks = eraseBlock(disorderedBlocks, index);
         lastRiddleBlock = getLastBlock(resolvedRiddle);
   
         if(isLastBlockToCheck(disorderedBlocks)){
           resolvedRiddle = [...resolvedRiddle, lastRiddleBlock, ...disorderedBlocks];
+          console.log('===> Solution: ', resolvedRiddle);
           return resolvedRiddle;          
         } else {
           return orderBlocks(0, checkBlocksContiguity(lastRiddleBlock, disorderedBlocks[0]));
@@ -31,6 +33,7 @@ const check = async (blocks, token) => {
 
       } else {
         if(!disorderedBlocks[index+1]){
+          console.log('===> Not solved - Avoiding infinite loop <===', blocks);
           return blocks;
         }
         return orderBlocks(index+1, checkBlocksContiguity(lastRiddleBlock, disorderedBlocks[index+1]));
@@ -38,6 +41,7 @@ const check = async (blocks, token) => {
     })
   }
 
+  console.log(' *****  Received blocks: *****  ', blocks);
   return orderBlocks(0, checkBlocksContiguity(lastRiddleBlock, disorderedBlocks[0]))
   
 };
